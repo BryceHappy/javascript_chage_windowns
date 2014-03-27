@@ -1,0 +1,37 @@
+<html>
+<head>
+
+
+<script src="jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="json2.js" ></script>
+
+<script type="text/javascript">
+    function dosubmit(){
+
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        var thing = {email: email, password: password};
+
+        var encoded = $.JSON.encode(thing);  
+
+        var decoded = $.JSON.decode(encoded);
+
+        $('#jsonstring').val(encoded);
+        window.opener.document.all.jsonstring.value = encoded;
+        
+        window.opener.show();
+        alert("ok");
+        this.close(); 
+
+    }
+</script>
+
+</head>
+<body>
+        <input type="text" id="email" name="email" />
+        <input type="text" id="password" name="password" />
+        <input type="button" onclick="dosubmit()" value="確認">
+
+</body>
+</html>

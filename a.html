@@ -1,0 +1,28 @@
+<html>
+<head>
+
+
+<script src="jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+    function show()
+    {
+        var encoded = $('#jsonstring').val();
+        var obj = jQuery.parseJSON(encoded);
+        
+        $('#email').val(obj.email);
+        $('#password').val(obj.password);
+    }
+</script>
+</head>
+<body onload="abc();">
+    <form name="form">
+        <input type="text" id="email" name="email"/>
+        <input type="text" id="password" name="password"/>
+        
+        <input type="hidden" id="jsonstring" name="jsonstring" />
+        <br />
+        <a href="b.html" target="_blank">b.html</a>
+    </form>
+</body>
+</html>
